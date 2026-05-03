@@ -2,15 +2,20 @@ const priceEl = document.getElementById("price")
 const timeEl = document.getElementById("time")
 const imgEl = document.getElementById("price-arrow")
 
+
+// to show current time at the opening of the site
+timeEl.textContent = "Time: " + new Date().toLocaleTimeString()
+
 let prePrice = 0
 
 setInterval(() => {
     let time = new Date().toLocaleTimeString()
-    let price = Math.random().toFixed(2)
+    let currentPrice = Math.random().toFixed(2)
 
-    setDetails(time, price)
+    setDetails(time, currentPrice)
 
 }, 2000)
+
 
 const setDetails = (time, currentPrice) => {
     priceEl.textContent = "Price: " + currentPrice
